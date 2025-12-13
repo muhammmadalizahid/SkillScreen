@@ -1,0 +1,179 @@
+You are an expert full-stack developer and prompt engineer. Your task is to generate a **fully scaffolded project for a CS job screening platform called SkillScreen**, with a strict requirement: **all features that use data structures must implement them manually**. **Do not use built-in arrays, stacks, queues, heaps, or graphs from libraries**—all must be coded from scratch to demonstrate true data structures and algorithms usage.
+
+---
+
+# 1. Project Overview
+SkillScreen is a web-based job screening platform covering the **entire CS domain** (Web Dev, Software Engineering, AI/ML, Cybersecurity, DevOps, Data Science). It features:
+
+- Job posting with skill weights
+- Candidate self-assessment
+- AI-generated MCQs (via Gemini API)
+- AI-assisted personalized feedback
+- **Skill dependency validation using manually implemented graphs**
+- Candidate ranking using **manually implemented heaps**
+- Question delivery and undo using **manually implemented queues and stacks**
+- Candidate top-N selection using custom Max-Heap
+
+---
+
+# 2. Tech Stack
+- **Frontend:** React.js, Vite  
+- **Backend:** Node.js, Express  
+- **Database:** PostgreSQL via Supabase  
+- **AI Integration:** Gemini API for MCQs and feedback  
+- **State Management:** Redux (optional)  
+- **Styling:** Tailwind CSS  
+- **Others:** Axios or Fetch for API calls, bcrypt for password hashing, dotenv for environment variables  
+
+---
+
+# 3. Folder Structure
+Generate the following folders and files:
+
+SkillScreen/
+├─ frontend/
+│  ├─ src/
+│  │  ├─ components/
+│  │  │  ├─ JobPostingForm.jsx
+│  │  │  ├─ CandidateApplicationForm.jsx
+│  │  │  ├─ MCQTestView.jsx
+│  │  │  ├─ RecruiterDashboard.jsx
+│  │  │  └─ AIFeedbackPanel.jsx
+│  │  ├─ pages/
+│  │  │  ├─ Home.jsx
+│  │  │  ├─ Jobs.jsx
+│  │  │  ├─ Apply.jsx
+│  │  │  └─ Dashboard.jsx
+│  │  ├─ context/
+│  │  │  └─ AuthContext.jsx
+│  │  ├─ services/
+│  │  │  ├─ api.js
+│  │  │  └─ geminiService.js
+│  │  ├─ dsa/                <-- all manual DSA implementations here
+│  │  │  ├─ LinkedList.js
+│  │  │  ├─ Stack.js
+│  │  │  ├─ Queue.js
+│  │  │  ├─ MaxHeap.js
+│  │  │  ├─ Graph.js
+│  │  │  └─ Tree.js
+│  │  ├─ utils/
+│  │  │  └─ helpers.js
+│  │  └─ App.jsx
+│  ├─ index.html
+│  └─ package.json
+├─ backend/
+│  ├─ src/
+│  │  ├─ controllers/
+│  │  │  ├─ jobController.js
+│  │  │  ├─ candidateController.js
+│  │  │  ├─ mcqController.js
+│  │  │  └─ feedbackController.js
+│  │  ├─ routes/
+│  │  │  ├─ jobRoutes.js
+│  │  │  ├─ candidateRoutes.js
+│  │  │  ├─ mcqRoutes.js
+│  │  │  └─ feedbackRoutes.js
+│  │  ├─ services/
+│  │  │  ├─ skillService.js
+│  │  │  ├─ validationService.js
+│  │  │  ├─ mcqService.js
+│  │  │  └─ feedbackService.js
+│  │  ├─ middlewares/
+│  │  │  ├─ authMiddleware.js
+│  │  │  └─ errorMiddleware.js
+│  │  ├─ config/
+│  │  │  ├─ db.js
+│  │  │  └─ gemini.js
+│  │  └─ app.js
+│  ├─ .env
+│  └─ package.json
+├─ README.md
+└─ .gitignore
+
+---
+
+# 4. Dependencies Installation
+**Frontend (React + Vite + Tailwind):**
+- `npm create vite@latest frontend --template react`
+- `cd frontend`
+- `npm install axios react-router-dom tailwindcss postcss autoprefixer`
+- `npx tailwindcss init -p`
+
+**Backend (Node + Express + Supabase + Gemini API):**
+- `cd backend`
+- `npm init -y`
+- `npm install express cors dotenv bcrypt jsonwebtoken supabase @supabase/supabase-js axios`
+
+---
+
+# 5. DSA Implementation Guidelines (Manual Data Structures)
+**Explicit Instructions:**  
+
+1. **Linked List:** Use for job skills; implement node insertion, deletion, traversal manually.  
+2. **Stack:** Use for MCQ undo functionality; implement push, pop, peek.  
+3. **Queue:** Use for question delivery (FIFO); implement enqueue, dequeue, peek.  
+4. **Graph:** Use adjacency list for skill dependencies; implement BFS for validation.  
+5. **Max-Heap:** Use for ranking candidates; implement insert, extractMax, heapify.  
+6. **Tree:** Use for MCQ question bank hierarchy; implement traversal for question selection.  
+7. **Arrays:** Only use as backing storage if absolutely needed, **no built-in array functions for DS operations**.  
+
+**Note:** All DS operations should be **manual-coded**, no external libraries, no JavaScript built-ins for core logic.
+
+---
+
+# 6. MCQ Generation via Gemini API
+- Backend receives a request per candidate skill.  
+- Send **prompt to Gemini API**:
+
+Generate 1 multiple-choice question for the skill {skill_name}.
+Include 4 options and specify the correct answer.
+Difficulty: {easy/medium/hard} based on candidate level {level}.
+Output format (JSON):
+{
+"question": "...",
+"options": ["...","...","...","..."],
+"answer": "..."
+}
+
+yaml
+Copy code
+
+- Store questions temporarily for the session.  
+- Deliver using **manual Queue**.  
+- Auto-grade using **manual comparison**.  
+
+---
+
+# 7. AI-Assisted Feedback
+- After candidate test, send profile to Gemini API.  
+- Receive JSON with skill gaps and suggestions.  
+- Display using **frontend dashboard**.  
+- Data structures: **Graph, HashMaps, Arrays** for dependency-aware feedback.  
+
+---
+
+# 8. Frontend / Backend Flow
+1. Recruiter creates job → store in DB → Linked List + Graph used.  
+2. Candidate applies → store self-scores → dynamic array + HashMap.  
+3. Validate skill consistency → Graph BFS.  
+4. Generate MCQs → Gemini API → store → Queue delivery → Stack undo.  
+5. Candidate answers → auto-grade.  
+6. Calculate final score → Max-Heap → extract top-N.  
+7. Generate AI feedback → display on dashboard.  
+
+---
+
+# 9. Future Enhancements
+- Add short-answer micro-tasks.  
+- Adaptive question difficulty.  
+- Expand to all CS domains.  
+- Recruiter-side analytics with AI insights.  
+
+---
+
+**Important Notes for Cloud 4.5 SONNET:**  
+- Make **all data structures manual-coded**.  
+- Ensure AI integrations (MCQs, feedback) are modular.  
+- Generate **ready-to-run folder structure**, install dependencies, and scaffold starter files.  
+- Include `.env` setup instructions for Gemini API and Supabase.  
+- Include **step-by-step development plan** for building DS-based features. 
