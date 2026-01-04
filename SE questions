@@ -1,0 +1,1480 @@
+[
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the primary goal of software engineering?",
+    "options": {
+      "A": "Writing code as quickly as possible",
+      "B": "Developing reliable and maintainable software",
+      "C": "Eliminating the need for documentation",
+      "D": "Avoiding testing activities"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does a software requirement describe?",
+    "options": {
+      "A": "How the software is coded",
+      "B": "What the software should do",
+      "C": "Which programming language is used",
+      "D": "How fast developers write code"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which phase comes first in the traditional software development life cycle?",
+    "options": {
+      "A": "Implementation",
+      "B": "Testing",
+      "C": "Requirements analysis",
+      "D": "Maintenance"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the main purpose of software documentation?",
+    "options": {
+      "A": "Increase development cost",
+      "B": "Help users and developers understand the system",
+      "C": "Replace source code",
+      "D": "Slow down development"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which role is primarily responsible for gathering requirements from stakeholders?",
+    "options": {
+      "A": "Tester",
+      "B": "System analyst",
+      "C": "Database administrator",
+      "D": "UI designer"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does SDLC stand for?",
+    "options": {
+      "A": "Software Design Logic Code",
+      "B": "System Development Life Cycle",
+      "C": "Software Development Life Cycle",
+      "D": "Structured Development Level Control"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is a bug in software?",
+    "options": {
+      "A": "A feature request",
+      "B": "A syntax style",
+      "C": "An error or defect in the program",
+      "D": "A documentation tool"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which activity ensures software works as intended?",
+    "options": {
+      "A": "Design",
+      "B": "Testing",
+      "C": "Deployment",
+      "D": "Requirement gathering"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is software maintenance?",
+    "options": {
+      "A": "Writing new software from scratch",
+      "B": "Updating and fixing software after release",
+      "C": "Removing old software permanently",
+      "D": "Testing unfinished features"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which artifact describes how a system will be built?",
+    "options": {
+      "A": "Requirement specification",
+      "B": "Design document",
+      "C": "Test report",
+      "D": "User manual"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the main focus of version control systems?",
+    "options": {
+      "A": "Code execution",
+      "B": "Tracking and managing code changes",
+      "C": "Testing automation",
+      "D": "User authentication"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which term refers to fixing errors after deployment?",
+    "options": {
+      "A": "Verification",
+      "B": "Validation",
+      "C": "Corrective maintenance",
+      "D": "Refactoring"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does modularity in software design promote?",
+    "options": {
+      "A": "Tight coupling",
+      "B": "Single large codebase",
+      "C": "Separation into independent components",
+      "D": "Elimination of documentation"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which activity focuses on confirming requirements with stakeholders?",
+    "options": {
+      "A": "Validation",
+      "B": "Compilation",
+      "C": "Debugging",
+      "D": "Refactoring"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the primary responsibility of a software tester?",
+    "options": {
+      "A": "Writing requirements",
+      "B": "Finding defects in the software",
+      "C": "Managing databases",
+      "D": "Deploying servers"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does reusability in software mean?",
+    "options": {
+      "A": "Deleting old code",
+      "B": "Using components in multiple systems",
+      "C": "Avoiding documentation",
+      "D": "Writing platform-specific code"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which model follows a sequential development approach?",
+    "options": {
+      "A": "Agile",
+      "B": "Spiral",
+      "C": "Waterfall",
+      "D": "DevOps"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the purpose of code reviews?",
+    "options": {
+      "A": "Increase execution speed",
+      "B": "Identify defects and improve code quality",
+      "C": "Replace testing",
+      "D": "Reduce documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which term describes how easily software can be modified?",
+    "options": {
+      "A": "Portability",
+      "B": "Usability",
+      "C": "Maintainability",
+      "D": "Reliability"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is a functional requirement?",
+    "options": {
+      "A": "A hardware specification",
+      "B": "A description of system behavior",
+      "C": "A performance constraint",
+      "D": "A deployment strategy"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does debugging involve?",
+    "options": {
+      "A": "Writing new features",
+      "B": "Identifying and fixing errors",
+      "C": "Deploying software",
+      "D": "Collecting requirements"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "Which document defines system requirements formally?",
+    "options": {
+      "A": "User manual",
+      "B": "Software Requirements Specification",
+      "C": "Test plan",
+      "D": "Source code"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What is the main goal of software testing?",
+    "options": {
+      "A": "Prove the software has no defects",
+      "B": "Identify defects and ensure quality",
+      "C": "Increase development speed",
+      "D": "Replace documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Easy",
+    "question": "What does portability refer to in software?",
+    "options": {
+      "A": "Ease of use",
+      "B": "Ability to run on different platforms",
+      "C": "Execution speed",
+      "D": "Security level"
+    },
+    "correct_answer": "B"
+  },
+
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main limitation of the Waterfall model?",
+    "options": {
+      "A": "High customer involvement",
+      "B": "Difficulty accommodating changing requirements",
+      "C": "Lack of documentation",
+      "D": "No testing phase"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is requirements traceability important?",
+    "options": {
+      "A": "To reduce coding effort",
+      "B": "To ensure all requirements are addressed throughout development",
+      "C": "To eliminate the need for testing",
+      "D": "To speed up deployment"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What problem does coupling measure in software design?",
+    "options": {
+      "A": "Execution speed",
+      "B": "Dependency between modules",
+      "C": "Memory usage",
+      "D": "User satisfaction"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is high cohesion desirable in software modules?",
+    "options": {
+      "A": "It increases hardware utilization",
+      "B": "It simplifies debugging and maintenance",
+      "C": "It removes the need for documentation",
+      "D": "It improves network performance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the primary purpose of a use case diagram?",
+    "options": {
+      "A": "Describe system architecture",
+      "B": "Model interactions between users and the system",
+      "C": "Define database structure",
+      "D": "Specify algorithms"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What does verification ensure in software development?",
+    "options": {
+      "A": "The product meets user needs",
+      "B": "The product is built according to specifications",
+      "C": "The software has no bugs",
+      "D": "The system is fully optimized"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main goal of refactoring?",
+    "options": {
+      "A": "Adding new features",
+      "B": "Improving code structure without changing behavior",
+      "C": "Fixing runtime errors",
+      "D": "Increasing execution speed"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are non-functional requirements important?",
+    "options": {
+      "A": "They define system features",
+      "B": "They specify quality attributes like performance and security",
+      "C": "They replace functional requirements",
+      "D": "They reduce development cost"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main advantage of iterative development?",
+    "options": {
+      "A": "Complete documentation upfront",
+      "B": "Early delivery of working software",
+      "C": "No need for testing",
+      "D": "Fixed scope throughout the project"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What risk does configuration management primarily address?",
+    "options": {
+      "A": "User dissatisfaction",
+      "B": "Uncontrolled changes to software artifacts",
+      "C": "Performance bottlenecks",
+      "D": "Security vulnerabilities"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is black-box testing used?",
+    "options": {
+      "A": "To test internal code structure",
+      "B": "To validate functionality without knowing implementation",
+      "C": "To optimize algorithms",
+      "D": "To improve code readability"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What does the term 'technical debt' refer to?",
+    "options": {
+      "A": "Unpaid software licenses",
+      "B": "Future cost of quick or poor design decisions",
+      "C": "Hardware maintenance cost",
+      "D": "Testing expenses"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main purpose of a software architecture?",
+    "options": {
+      "A": "Define coding standards",
+      "B": "Provide a high-level structure of the system",
+      "C": "Describe user interface details",
+      "D": "List test cases"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is change management critical in large software projects?",
+    "options": {
+      "A": "To eliminate user feedback",
+      "B": "To control impact of requirement changes",
+      "C": "To speed up coding",
+      "D": "To reduce hardware costs"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the key difference between validation and verification?",
+    "options": {
+      "A": "Validation checks code, verification checks design",
+      "B": "Validation ensures right product, verification ensures product is built right",
+      "C": "Validation happens before verification",
+      "D": "They are identical concepts"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are design patterns useful?",
+    "options": {
+      "A": "They generate code automatically",
+      "B": "They provide proven solutions to common design problems",
+      "C": "They replace system requirements",
+      "D": "They eliminate testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What does regression testing ensure?",
+    "options": {
+      "A": "New features are added correctly",
+      "B": "Existing functionality remains unaffected by changes",
+      "C": "System performance is optimal",
+      "D": "User interfaces are consistent"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is prototyping used during requirements analysis?",
+    "options": {
+      "A": "To finalize architecture",
+      "B": "To clarify and validate user requirements",
+      "C": "To replace documentation",
+      "D": "To improve runtime efficiency"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the primary objective of risk management?",
+    "options": {
+      "A": "Eliminate all risks",
+      "B": "Identify and mitigate potential project risks",
+      "C": "Reduce testing effort",
+      "D": "Increase development speed"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is user feedback important in Agile development?",
+    "options": {
+      "A": "It replaces documentation",
+      "B": "It helps adapt the product to changing needs",
+      "C": "It reduces coding effort",
+      "D": "It eliminates testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the purpose of acceptance testing?",
+    "options": {
+      "A": "Verify internal code quality",
+      "B": "Confirm software meets user requirements",
+      "C": "Measure performance metrics",
+      "D": "Check database consistency"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is documentation still important in Agile projects?",
+    "options": {
+      "A": "Agile discourages communication",
+      "B": "It supports maintenance and knowledge transfer",
+      "C": "It replaces customer collaboration",
+      "D": "It eliminates the need for testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What problem does continuous integration address?",
+    "options": {
+      "A": "Late discovery of integration issues",
+      "B": "User interface design",
+      "C": "Database normalization",
+      "D": "Requirement ambiguity"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main benefit of automated testing?",
+    "options": {
+      "A": "Eliminates the need for manual testing",
+      "B": "Provides faster and repeatable test execution",
+      "C": "Improves code readability",
+      "D": "Reduces hardware costs"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is risk-based testing important?",
+    "options": {
+      "A": "It prioritizes testing based on business and technical risks",
+      "B": "It eliminates testing for low-priority features",
+      "C": "It reduces development cost automatically",
+      "D": "It replaces documentation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What does the term 'code smell' indicate?",
+    "options": {
+      "A": "Syntax error",
+      "B": "Potential design or maintainability problem",
+      "C": "Hardware inefficiency",
+      "D": "Optimized algorithm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is separation of concerns important in software design?",
+    "options": {
+      "A": "It reduces compilation time",
+      "B": "It makes systems easier to understand and maintain",
+      "C": "It increases CPU usage",
+      "D": "It replaces testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the primary goal of software metrics?",
+    "options": {
+      "A": "Generate automated code",
+      "B": "Measure and improve software quality and productivity",
+      "C": "Eliminate testing",
+      "D": "Simplify deployment"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are mock objects used in unit testing?",
+    "options": {
+      "A": "To replace hardware dependencies",
+      "B": "To simulate and isolate components for testing",
+      "C": "To improve performance",
+      "D": "To reduce coding effort"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the advantage of using UML diagrams?",
+    "options": {
+      "A": "They automatically generate code",
+      "B": "They provide visual modeling of software systems",
+      "C": "They eliminate documentation needs",
+      "D": "They replace testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is code review considered a good practice?",
+    "options": {
+      "A": "It reduces execution time",
+      "B": "It improves code quality and knowledge sharing",
+      "C": "It replaces unit testing",
+      "D": "It removes the need for design patterns"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the purpose of a design document?",
+    "options": {
+      "A": "Specify coding standards",
+      "B": "Guide the implementation with a blueprint of the system",
+      "C": "Replace testing",
+      "D": "Measure performance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is continuous deployment beneficial?",
+    "options": {
+      "A": "It eliminates testing",
+      "B": "It delivers changes to production faster and reliably",
+      "C": "It reduces hardware usage",
+      "D": "It removes the need for version control"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What problem does a code smell indicate?",
+    "options": {
+      "A": "Potential maintainability or design problem",
+      "B": "Syntax error",
+      "C": "Memory leak",
+      "D": "Hardware incompatibility"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are interface contracts important?",
+    "options": {
+      "A": "They improve compiler speed",
+      "B": "They define expected behavior between modules",
+      "C": "They replace testing",
+      "D": "They optimize runtime performance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main benefit of modular design?",
+    "options": {
+      "A": "Faster compilation",
+      "B": "Easier maintenance and reusability",
+      "C": "Reduced memory usage",
+      "D": "Eliminates need for testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is automated build important?",
+    "options": {
+      "A": "It replaces testing",
+      "B": "It ensures consistent builds and reduces integration errors",
+      "C": "It reduces user training",
+      "D": "It simplifies documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the main advantage of test-driven development (TDD)?",
+    "options": {
+      "A": "It replaces design documentation",
+      "B": "It ensures code is tested as it is written",
+      "C": "It eliminates debugging",
+      "D": "It increases runtime performance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is pair programming effective?",
+    "options": {
+      "A": "It halves development time",
+      "B": "It increases code quality and knowledge sharing",
+      "C": "It removes testing",
+      "D": "It reduces system requirements"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What does maintainability refer to in software quality?",
+    "options": {
+      "A": "How fast the software executes",
+      "B": "Ease of modifying and updating software",
+      "C": "Number of users supported",
+      "D": "Hardware requirements"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are sequence diagrams useful?",
+    "options": {
+      "A": "They automatically generate tests",
+      "B": "They model the order of interactions between objects",
+      "C": "They optimize algorithms",
+      "D": "They replace code documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the key advantage of Agile retrospectives?",
+    "options": {
+      "A": "They replace design documentation",
+      "B": "They help teams reflect and improve processes",
+      "C": "They remove testing effort",
+      "D": "They increase execution speed"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is continuous integration important for large projects?",
+    "options": {
+      "A": "It replaces code reviews",
+      "B": "It detects integration errors early",
+      "C": "It reduces hardware cost",
+      "D": "It eliminates testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is software maintainability difficult without proper design?",
+    "options": {
+      "A": "Code becomes difficult to understand and modify",
+      "B": "Testing becomes unnecessary",
+      "C": "Performance is reduced",
+      "D": "User requirements are simplified"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why are component diagrams useful in software engineering?",
+    "options": {
+      "A": "They show module dependencies and deployment",
+      "B": "They replace testing",
+      "C": "They generate user documentation",
+      "D": "They optimize memory"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the purpose of a deployment diagram?",
+    "options": {
+      "A": "To show runtime interactions between objects",
+      "B": "To illustrate hardware nodes and software components",
+      "C": "To define user interface layout",
+      "D": "To optimize system performance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is performance profiling used in software projects?",
+    "options": {
+      "A": "To automatically generate code",
+      "B": "To identify bottlenecks and optimize performance",
+      "C": "To replace testing",
+      "D": "To reduce documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "What is the purpose of a traceability matrix?",
+    "options": {
+      "A": "To track requirements through design, implementation, and testing",
+      "B": "To replace unit tests",
+      "C": "To optimize software architecture",
+      "D": "To reduce coding effort"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Medium",
+    "question": "Why is modular programming beneficial in large projects?",
+    "options": {
+      "A": "Modules can be developed, tested, and maintained independently",
+      "B": "It reduces coding effort to zero",
+      "C": "It eliminates testing",
+      "D": "It increases runtime performance automatically"
+    },
+    "correct_answer": "A"
+  },
+  
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is a key advantage of using event-driven architecture?",
+    "options": {
+      "A": "Simplifies synchronous operations",
+      "B": "Improves decoupling and responsiveness",
+      "C": "Reduces hardware requirements",
+      "D": "Eliminates testing needs"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is API versioning important?",
+    "options": {
+      "A": "It reduces execution speed",
+      "B": "It prevents breaking existing clients",
+      "C": "It eliminates the need for documentation",
+      "D": "It increases memory usage"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main risk of using shared global state in multi-threaded applications?",
+    "options": {
+      "A": "Improved performance",
+      "B": "Race conditions and unpredictable behavior",
+      "C": "Simpler code structure",
+      "D": "Increased memory efficiency"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is modularity important in software design?",
+    "options": {
+      "A": "Reduces maintainability",
+      "B": "Improves code reuse and understandability",
+      "C": "Eliminates testing",
+      "D": "Increases compilation time"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the benefit of eventual consistency in distributed databases?",
+    "options": {
+      "A": "Immediate correctness",
+      "B": "Improved availability and partition tolerance",
+      "C": "Eliminates concurrency issues",
+      "D": "Simplifies code structure"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why does high coupling reduce system flexibility?",
+    "options": {
+      "A": "Changes in one module affect others",
+      "B": "Improves testability",
+      "C": "Reduces memory consumption",
+      "D": "Increases scalability automatically"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main purpose of code refactoring?",
+    "options": {
+      "A": "Change system functionality",
+      "B": "Improve code structure without altering behavior",
+      "C": "Reduce memory usage only",
+      "D": "Remove the need for testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is logging critical in distributed systems?",
+    "options": {
+      "A": "To eliminate testing",
+      "B": "To understand system behavior and diagnose issues",
+      "C": "To increase memory usage",
+      "D": "To remove concurrency problems"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What does the Liskov Substitution Principle enforce?",
+    "options": {
+      "A": "Derived classes should replace base classes without breaking correctness",
+      "B": "Eliminate inheritance",
+      "C": "Reduce memory usage",
+      "D": "Increase execution speed"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is testing important in agile methodologies?",
+    "options": {
+      "A": "It slows down development",
+      "B": "It ensures rapid feedback and software quality",
+      "C": "It eliminates coding errors automatically",
+      "D": "It replaces documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the primary goal of CI/CD pipelines?",
+    "options": {
+      "A": "Reduce deployment frequency",
+      "B": "Automate build, test, and deployment processes",
+      "C": "Eliminate testing",
+      "D": "Reduce software modularity"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is immutability recommended in functional programming?",
+    "options": {
+      "A": "Reduces memory usage",
+      "B": "Prevents side effects and race conditions",
+      "C": "Improves UI responsiveness",
+      "D": "Reduces CPU utilization"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main trade-off in microservices architecture?",
+    "options": {
+      "A": "Reduced operational complexity",
+      "B": "Increased inter-service communication overhead",
+      "C": "No scalability issues",
+      "D": "Eliminated need for testing"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is observability critical in cloud-native systems?",
+    "options": {
+      "A": "It eliminates deployment",
+      "B": "It allows understanding system behavior from metrics, logs, and traces",
+      "C": "It reduces memory usage",
+      "D": "It simplifies compilation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main challenge of distributed consensus?",
+    "options": {
+      "A": "Ensuring all nodes agree despite failures and network delays",
+      "B": "Reducing code size",
+      "C": "Increasing CPU utilization",
+      "D": "Simplifying user interfaces"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is dependency injection used in software design?",
+    "options": {
+      "A": "To hard-code dependencies",
+      "B": "To increase modularity and testability",
+      "C": "To reduce network latency",
+      "D": "To simplify hardware configuration"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is latency a concern in asynchronous messaging?",
+    "options": {
+      "A": "It increases CPU usage",
+      "B": "Messages may take longer to be processed despite decoupling",
+      "C": "It eliminates concurrency problems",
+      "D": "It reduces memory usage"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is a key advantage of CQRS (Command Query Responsibility Segregation)?",
+    "options": {
+      "A": "Combines read and write models into one",
+      "B": "Separates read and write concerns for scalability and performance",
+      "C": "Eliminates the need for databases",
+      "D": "Reduces system observability"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why are immutable events recommended in event sourcing?",
+    "options": {
+      "A": "To allow modification of past events",
+      "B": "To maintain a reliable audit trail and system state",
+      "C": "To increase memory usage",
+      "D": "To reduce system throughput"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the benefit of using feature toggles?",
+    "options": {
+      "A": "Disable production monitoring",
+      "B": "Enable gradual rollout and easy rollback of features",
+      "C": "Eliminate code testing",
+      "D": "Reduce compilation time"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is load balancing critical in distributed systems?",
+    "options": {
+      "A": "To centralize requests",
+      "B": "To evenly distribute traffic and improve reliability",
+      "C": "To reduce testing effort",
+      "D": "To eliminate scalability issues"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is monitoring of distributed transactions important?",
+    "options": {
+      "A": "To simplify code structure",
+      "B": "To detect failures and maintain consistency across services",
+      "C": "To increase latency",
+      "D": "To reduce observability"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the purpose of circuit breakers in software systems?",
+    "options": {
+      "A": "Prevent cascading failures by stopping repeated failing calls",
+      "B": "Increase network traffic",
+      "C": "Eliminate concurrency",
+      "D": "Reduce logging overhead"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is horizontal partitioning (sharding) used in databases?",
+    "options": {
+      "A": "To reduce query complexity by dividing data across nodes",
+      "B": "To merge multiple tables",
+      "C": "To increase transaction latency",
+      "D": "To eliminate indexing needs"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the primary challenge of backward compatibility?",
+    "options": {
+      "A": "It increases development costs but ensures existing clients continue to work",
+      "B": "It eliminates the need for testing",
+      "C": "It reduces memory usage",
+      "D": "It simplifies architecture"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why does Conway’s Law impact software architecture decisions?",
+    "options": {
+      "A": "It enforces coding standards automatically",
+      "B": "System design tends to mirror the communication structure of the organization",
+      "C": "It limits scalability of programming languages",
+      "D": "It eliminates the need for architectural documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the primary architectural risk of a tightly coupled system?",
+    "options": {
+      "A": "Increased memory usage",
+      "B": "Difficulty in modifying or scaling individual components",
+      "C": "Higher compilation time",
+      "D": "Reduced execution speed only"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is the Spiral model considered risk-driven?",
+    "options": {
+      "A": "It eliminates testing risks",
+      "B": "Each iteration focuses on identifying and mitigating key risks",
+      "C": "It prioritizes documentation over development",
+      "D": "It removes the need for requirements analysis"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main drawback of using microservices architecture?",
+    "options": {
+      "A": "Lack of scalability",
+      "B": "Increased system complexity and operational overhead",
+      "C": "Poor fault isolation",
+      "D": "Limited technology choices"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is eventual consistency acceptable in some distributed systems?",
+    "options": {
+      "A": "It guarantees immediate correctness",
+      "B": "It improves availability and partition tolerance",
+      "C": "It eliminates concurrency issues",
+      "D": "It simplifies data modeling"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What problem does the CAP theorem fundamentally describe?",
+    "options": {
+      "A": "Trade-offs between security, performance, and usability",
+      "B": "Limitations of object-oriented programming",
+      "C": "Trade-offs among consistency, availability, and partition tolerance",
+      "D": "Conflicts between functional and non-functional requirements"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is idempotency critical in RESTful APIs?",
+    "options": {
+      "A": "To improve response time",
+      "B": "To ensure repeated requests do not cause unintended side effects",
+      "C": "To reduce payload size",
+      "D": "To enforce authentication"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main risk of premature optimization?",
+    "options": {
+      "A": "Lower runtime performance",
+      "B": "Increased hardware costs",
+      "C": "Added complexity without proven benefit",
+      "D": "Reduced code execution speed"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why does high cyclomatic complexity reduce code quality?",
+    "options": {
+      "A": "It increases execution speed",
+      "B": "It makes code harder to test and maintain",
+      "C": "It limits compiler optimization",
+      "D": "It reduces memory efficiency"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What architectural concern does the Single Responsibility Principle address?",
+    "options": {
+      "A": "Performance optimization",
+      "B": "Security enforcement",
+      "C": "Reducing reasons for a module to change",
+      "D": "Database normalization"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is fault tolerance essential in distributed systems?",
+    "options": {
+      "A": "To eliminate network latency",
+      "B": "To allow the system to continue operating despite failures",
+      "C": "To reduce development cost",
+      "D": "To simplify system architecture"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main challenge of achieving strong consistency at scale?",
+    "options": {
+      "A": "Increased memory usage",
+      "B": "Higher latency due to coordination overhead",
+      "C": "Limited programming language support",
+      "D": "Complex user interfaces"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is separation of concerns critical in large-scale systems?",
+    "options": {
+      "A": "It eliminates all dependencies",
+      "B": "It reduces cognitive load and improves maintainability",
+      "C": "It increases execution speed",
+      "D": "It replaces architectural patterns"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What problem does horizontal scaling primarily solve?",
+    "options": {
+      "A": "Memory leaks",
+      "B": "Single point of failure and load limitations",
+      "C": "Poor code readability",
+      "D": "Lack of modularity"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why can shared mutable state cause concurrency issues?",
+    "options": {
+      "A": "It reduces memory usage",
+      "B": "It leads to race conditions and unpredictable behavior",
+      "C": "It simplifies thread communication",
+      "D": "It improves CPU utilization"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the main benefit of domain-driven design (DDD)?",
+    "options": {
+      "A": "Automatic code generation",
+      "B": "Aligning software design closely with business domain concepts",
+      "C": "Eliminating the need for testing",
+      "D": "Reducing deployment complexity"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why does loose coupling improve system resilience?",
+    "options": {
+      "A": "It increases execution speed",
+      "B": "Failures in one component have limited impact on others",
+      "C": "It enforces strict interfaces",
+      "D": "It reduces the need for documentation"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the key risk when scaling a monolithic architecture?",
+    "options": {
+      "A": "Increased memory availability",
+      "B": "Tight interdependencies affecting deployment and scaling",
+      "C": "Reduced code duplication",
+      "D": "Simplified debugging"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is observability important in modern software systems?",
+    "options": {
+      "A": "It replaces the need for testing",
+      "B": "It enables understanding system behavior from outputs",
+      "C": "It increases execution speed",
+      "D": "It reduces hardware requirements"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What trade-off does asynchronous communication introduce?",
+    "options": {
+      "A": "Lower availability",
+      "B": "Increased latency but improved decoupling",
+      "C": "Reduced scalability",
+      "D": "Simpler error handling"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why can distributed transactions be problematic?",
+    "options": {
+      "A": "They eliminate consistency",
+      "B": "They introduce coordination complexity and performance overhead",
+      "C": "They simplify error recovery",
+      "D": "They reduce fault tolerance"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What does the Open–Closed Principle promote?",
+    "options": {
+      "A": "Classes should be open for modification",
+      "B": "Systems should avoid abstraction",
+      "C": "Software entities should be open for extension but closed for modification",
+      "D": "Modules should depend on concrete implementations"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why is backward compatibility important in API design?",
+    "options": {
+      "A": "It increases development speed",
+      "B": "It prevents breaking existing clients when changes are introduced",
+      "C": "It enforces stricter security",
+      "D": "It reduces testing effort"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "What is the primary challenge of achieving exactly-once message delivery?",
+    "options": {
+      "A": "Message serialization",
+      "B": "Handling failures and retries without duplication",
+      "C": "Reducing network bandwidth",
+      "D": "Improving UI responsiveness"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "field": "Software Engineering",
+    "difficulty": "Hard",
+    "question": "Why does abstraction help manage software complexity?",
+    "options": {
+      "A": "It removes all dependencies",
+      "B": "It hides implementation details while exposing essential behavior",
+      "C": "It increases execution speed",
+      "D": "It eliminates the need for testing"
+    },
+    "correct_answer": "B"
+  }
+]

@@ -1,18 +1,27 @@
 const express = require('express');
 const router = express.Router();
+const { authenticateToken } = require('../middleware/authMiddleware');
 const {
   createJobController,
   getAllJobsController,
+  getUserJobsController,
   getJobByIdController,
   updateJobController,
-  deleteJobController
+  deleteJobController,
+  getSimilarJobsController,
+  getGraphStatsController,
+  rebuildGraphController
 } = require('../controllers/jobController');
 
 // Job routes
-router.post('/', createJobController);
+router.post('/', authenticateToken, createJobController);
 router.get('/', getAllJobsController);
+router.get('/user/my-jobs', authenticateToken, getUserJobsController);
+router.get('/graph/stats', getGraphStatsController); // Graph statistics
+router.post('/graph/rebuild', authenticateToken, rebuildGraphController); // Rebuild graph
 router.get('/:id', getJobByIdController);
-router.put('/:id', updateJobController);
-router.delete('/:id', deleteJobController);
+router.get('/:id/similar', getSimilarJobsController); // Similar jobs using BFS
+router.put('/:id', authenticateToken, updateJobController);
+router.delete('/:id', authenticateToken, deleteJobController);
 
 module.exports = router;

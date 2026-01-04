@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { authenticateToken } = require('../middleware/authMiddleware');
 const {
   submitApplicationController,
   getAllApplicationsController,
@@ -8,7 +9,7 @@ const {
 } = require('../controllers/candidateController');
 
 // Application routes
-router.post('/', submitApplicationController);
+router.post('/', authenticateToken, submitApplicationController);
 router.get('/', getAllApplicationsController);
 router.get('/:id', getApplicationByIdController);
 router.get('/ranked/:jobId', getRankedCandidatesController);

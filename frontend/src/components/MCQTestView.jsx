@@ -37,20 +37,17 @@ const MCQTestView = ({ questions, onComplete }) => {
       return;
     }
 
+    // Extract just the letter (A, B, C, D) from the option string
+    const answerLetter = selectedAnswer.split(':')[0].trim();
+
     // Push answer to stack (for undo functionality)
     const answerData = {
       question: currentQuestion,
-      selectedAnswer,
-      isCorrect: selectedAnswer === currentQuestion.answer
+      selectedAnswer: answerLetter
     };
 
     answerStack.push(answerData);
     setAnsweredQuestions([...answeredQuestions, answerData]);
-
-    // Update score
-    if (answerData.isCorrect) {
-      setScore(score + 1);
-    }
 
     // Load next question
     loadNextQuestion();
@@ -74,11 +71,6 @@ const MCQTestView = ({ questions, onComplete }) => {
         questionQueue.enqueue(tempQueue.dequeue());
       }
 
-      // Update score
-      if (lastAnswer.isCorrect) {
-        setScore(score - 1);
-      }
-
       // Update answered questions
       const newAnswered = [...answeredQuestions];
       newAnswered.pop();
@@ -92,44 +84,21 @@ const MCQTestView = ({ questions, onComplete }) => {
   };
 
   if (isComplete) {
-    const percentage = ((score / questions.length) * 100).toFixed(2);
+    // Submit all answers to backend for verification
+    const userAnswers = answeredQuestions.map(ans => ans.selectedAnswer);
+    onComplete(userAnswers); // Pass answers to parent for backend submission
     
     return (
-      <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-6">Test Complete!</h2>
-        
-        <div className="text-center p-8 bg-blue-50 rounded-lg mb-6">
-          <div className="text-6xl font-bold text-blue-600 mb-4">
-            {score}/{questions.length}
-          </div>
-          <div className="text-2xl text-gray-700">
-            Score: {percentage}%
-          </div>
+      <div className="max-w-5xl mx-auto bg-white rounded-lg border border-gray-200 shadow-lg p-8 text-center">
+        <div className="animate-pulse space-y-6">
+          <div className="h-8 bg-gray-200 rounded w-2/3 mx-auto"></div>
+          <div className="h-32 bg-gray-200 rounded"></div>
         </div>
-
-        <div className="space-y-4 mb-6">
-          <h3 className="text-lg font-semibold">Review Your Answers:</h3>
-          {answeredQuestions.map((ans, index) => (
-            <div key={index} className={`p-4 rounded-lg ${ans.isCorrect ? 'bg-green-50' : 'bg-red-50'}`}>
-              <p className="font-medium mb-2">{ans.question.question}</p>
-              <p className="text-sm">
-                Your answer: <strong>{ans.selectedAnswer}</strong>
-                {!ans.isCorrect && (
-                  <span className="ml-2 text-red-600">
-                    (Correct: {ans.question.answer})
-                  </span>
-                )}
-              </p>
-            </div>
-          ))}
+        <div className="mt-8">
+          <div className="animate-spin border-4 border-gray-200 border-t-[#0a66c2] rounded-full h-12 w-12 mx-auto mb-4"></div>
+          <p className="text-base text-gray-600 font-medium">Submitting your answers...</p>
+          <p className="text-sm text-gray-500 mt-2">Calculating your score</p>
         </div>
-
-        <button
-          onClick={() => onComplete(score, percentage)}
-          className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700"
-        >
-          Finish and Get AI Feedback
-        </button>
       </div>
     );
   }
@@ -139,31 +108,35 @@ const MCQTestView = ({ questions, onComplete }) => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-5xl mx-auto bg-white rounded-lg border border-gray-200 shadow-lg p-8">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">MCQ Test</h2>
-        <div className="text-sm text-gray-600">
-          Question {answeredQuestions.length + 1} of {questions.length}
+        <h2 className="text-3xl font-bold text-gray-900">Assessment Test</h2>
+        <div className="text-base font-semibold text-gray-700 bg-gray-100 px-4 py-2 rounded-full">
+          {answeredQuestions.length + 1} / {questions.length}
         </div>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
+      <div className="w-full bg-gray-200 h-2 rounded-full mb-8 overflow-hidden">
         <div
-          className="bg-blue-600 h-2 rounded-full transition-all"
+          className="bg-[#0a66c2] h-2 transition-all duration-300 ease-out"
           style={{ width: `${((answeredQuestions.length) / questions.length) * 100}%` }}
         />
       </div>
 
       {/* Question */}
-      <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-        <p className="text-lg font-medium mb-4">{currentQuestion.question}</p>
+      <div className="mb-8 p-6 bg-[#f3f2ef] rounded-lg border border-gray-300">
+        <p className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">{currentQuestion.question}</p>
 
         <div className="space-y-3">
           {currentQuestion.options.map((option, index) => (
             <label
               key={index}
-              className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-blue-50"
+              className={`flex items-center p-4 rounded-lg cursor-pointer transition-all ${
+                selectedAnswer === option
+                  ? 'bg-[#0a66c2] bg-opacity-10 border-2 border-[#0a66c2] shadow-md'
+                  : 'bg-white border-2 border-gray-200 hover:border-[#0a66c2] hover:shadow-sm'
+              }`}
             >
               <input
                 type="radio"
@@ -171,9 +144,11 @@ const MCQTestView = ({ questions, onComplete }) => {
                 value={option}
                 checked={selectedAnswer === option}
                 onChange={(e) => setSelectedAnswer(e.target.value)}
-                className="mr-3"
+                className="mr-4 w-5 h-5 text-[#0a66c2] focus:ring-[#0a66c2]"
               />
-              <span>{option}</span>
+              <span className={`text-sm font-medium ${
+                selectedAnswer === option ? 'text-[#0a66c2]' : 'text-gray-900'
+              }`}>{option}</span>
             </label>
           ))}
         </div>
@@ -184,25 +159,25 @@ const MCQTestView = ({ questions, onComplete }) => {
         <button
           onClick={handleUndo}
           disabled={answerStack.isEmpty()}
-          className={`flex-1 py-3 font-semibold rounded-lg ${
+          className={`flex-1 py-3 text-sm font-semibold rounded-lg transition-all ${
             answerStack.isEmpty()
-              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              : 'bg-yellow-500 text-white hover:bg-yellow-600'
+              ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-2 border-gray-200'
+              : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-gray-400 hover:shadow-md'
           }`}
         >
-          Undo Last Answer (Stack)
+          Undo Last Answer
         </button>
         <button
           onClick={handleSubmitAnswer}
-          className="flex-1 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700"
+          disabled={!selectedAnswer}
+          className={`flex-1 py-3 text-sm font-semibold rounded-lg transition-all ${
+            selectedAnswer
+              ? 'bg-[#0a66c2] text-white hover:bg-[#004182] shadow-md hover:shadow-lg'
+              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+          }`}
         >
           Submit Answer
         </button>
-      </div>
-
-      {/* Current Score */}
-      <div className="mt-4 text-center text-gray-600">
-        Current Score: {score}/{answeredQuestions.length}
       </div>
     </div>
   );

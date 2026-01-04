@@ -66,7 +66,6 @@ const createJob = async (jobData) => {
           description: job.description,
           domain: job.domain,
           skills: JSON.stringify(job.skills),
-          skill_graph: JSON.stringify(job.skillGraph),
           created_at: job.createdAt
         }])
         .select();
@@ -97,8 +96,7 @@ const getAllJobs = async (domain = null) => {
       
       return data.map(job => ({
         ...job,
-        skills: JSON.parse(job.skills || '[]'),
-        skillGraph: JSON.parse(job.skill_graph || '{}')
+        skills: JSON.parse(job.skills || '[]')
       }));
     } else {
       // Use in-memory storage
@@ -124,8 +122,7 @@ const getJobById = async (id) => {
       
       return {
         ...data,
-        skills: JSON.parse(data.skills || '[]'),
-        skillGraph: JSON.parse(data.skill_graph || '{}')
+        skills: JSON.parse(data.skills || '[]')
       };
     } else {
       // Use in-memory storage
@@ -147,8 +144,7 @@ const updateJob = async (id, jobData) => {
           title: jobData.title,
           description: jobData.description,
           domain: jobData.domain,
-          skills: JSON.stringify(jobData.skills),
-          skill_graph: JSON.stringify(jobData.skillGraph)
+          skills: JSON.stringify(jobData.skills)
         })
         .eq('id', id)
         .select();

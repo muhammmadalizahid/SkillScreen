@@ -1,10 +1,25 @@
-const { submitApplication, getAllApplications, getApplicationById, rankCandidates } = require('../services/validationService');
+const {
+  createCandidate,
+  createApplication,
+  getApplicationsByJob,
+  getApplicationById
+} = require('../services/databaseService');
 
 // Submit application
 const submitApplicationController = async (req, res) => {
   try {
-    const applicationData = req.body;
-    const application = await submitApplication(applicationData);
+    const { candidateName, candidateEmail, jobId } = req.body;
+    const user_id = req.user?.id; // Get user_id from authenticated user
+    
+    console.log('📝 Submitting application:', { candidateName, candidateEmail, jobId, user_id });
+    
+    // Create or get candidate with user_id
+    const candidate = await createCandidate(candidateName, candidateEmail, user_id);
+    console.log('✅ Candidate created/found:', candidate.id);
+    
+    // Create application
+    const application = await createApplication(candidate.id, jobId);
+    console.log('✅ Application created:', application.id);
     
     res.status(201).json({
       success: true,
@@ -12,7 +27,8 @@ const submitApplicationController = async (req, res) => {
       message: 'Application submitted successfully'
     });
   } catch (error) {
-    console.error('Error submitting application:', error);
+    console.error('❌ Error submitting application:', error.message);
+    console.error('Stack:', error.stack);
     res.status(500).json({
       success: false,
       message: 'Failed to submit application',
@@ -25,7 +41,7 @@ const submitApplicationController = async (req, res) => {
 const getAllApplicationsController = async (req, res) => {
   try {
     const { jobId } = req.query;
-    const applications = await getAllApplications(jobId);
+    const applications = await getApplicationsByJob(jobId);
     
     res.status(200).json({
       success: true,

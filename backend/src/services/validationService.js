@@ -1,55 +1,6 @@
 const supabase = require('../config/db');
 const { getJobById } = require('./skillService');
 
-// Manual Graph implementation for dependency validation
-class Graph {
-  constructor() {
-    this.adjacencyList = {};
-  }
-
-  addVertex(vertex) {
-    if (!this.adjacencyList[vertex]) {
-      this.adjacencyList[vertex] = [];
-    }
-  }
-
-  addEdge(source, destination) {
-    if (!this.adjacencyList[source]) {
-      this.addVertex(source);
-    }
-    if (!this.adjacencyList[destination]) {
-      this.addVertex(destination);
-    }
-    if (!this.adjacencyList[source].includes(destination)) {
-      this.adjacencyList[source].push(destination);
-    }
-  }
-
-  bfs(startVertex) {
-    const visited = {};
-    const queue = [startVertex];
-    const result = [];
-    
-    visited[startVertex] = true;
-    
-    while (queue.length > 0) {
-      const currentVertex = queue.shift();
-      result.push(currentVertex);
-      
-      const neighbors = this.adjacencyList[currentVertex] || [];
-      for (let i = 0; i < neighbors.length; i++) {
-        const neighbor = neighbors[i];
-        if (!visited[neighbor]) {
-          visited[neighbor] = true;
-          queue.push(neighbor);
-        }
-      }
-    }
-    
-    return result;
-  }
-}
-
 // Manual MaxHeap implementation for candidate ranking
 class MaxHeap {
   constructor(compareFn) {
@@ -138,58 +89,13 @@ class MaxHeap {
 let applications = [];
 let applicationIdCounter = 1;
 
-// Validate skill dependencies using Graph
-const validateSkillDependencies = (selfAssessment, skillGraph) => {
-  const graph = new Graph();
-  
-  // Build graph from job data
-  Object.keys(skillGraph).forEach(vertex => {
-    graph.addVertex(vertex);
-    skillGraph[vertex].forEach(neighbor => {
-      graph.addEdge(vertex, neighbor);
-    });
-  });
-
-  // Validate: high-scored skills should have dependencies with reasonable scores
-  for (const skill in selfAssessment) {
-    const dependencies = graph.adjacencyList[skill] || [];
-    const skillScore = selfAssessment[skill];
-
-    if (skillScore > 7) {
-      for (const dep of dependencies) {
-        const depScore = selfAssessment[dep] || 0;
-        if (depScore < 5) {
-          return {
-            valid: false,
-            message: `Skill dependency inconsistency: ${skill} (${skillScore}) depends on ${dep} (${depScore})`
-          };
-        }
-      }
-    }
-  }
-
-  return { valid: true };
-};
-
-// Submit application with validation
+// Submit application
 const submitApplication = async (applicationData) => {
   try {
     // Get job details
     const job = await getJobById(applicationData.jobId);
     if (!job) {
       throw new Error('Job not found');
-    }
-
-    // Validate skill dependencies using Graph
-    if (job.skillGraph) {
-      const validation = validateSkillDependencies(
-        applicationData.selfAssessment,
-        job.skillGraph
-      );
-      
-      if (!validation.valid) {
-        throw new Error(validation.message);
-      }
     }
 
     const application = {
@@ -199,13 +105,12 @@ const submitApplication = async (applicationData) => {
     };
 
     if (supabase) {
-      const { data, error } = await supabase
+      const { data, error} = await supabase
         .from('applications')
         .insert([{
           job_id: application.jobId,
           candidate_name: application.candidateName,
           candidate_email: application.candidateEmail,
-          self_assessment: JSON.stringify(application.selfAssessment),
           test_score: application.testScore,
           test_results: JSON.stringify(application.testResults),
           submitted_at: application.submittedAt
@@ -237,7 +142,6 @@ const getAllApplications = async (jobId = null) => {
       
       return data.map(app => ({
         ...app,
-        selfAssessment: JSON.parse(app.self_assessment || '{}'),
         testResults: JSON.parse(app.test_results || '{}')
       }));
     } else {
@@ -265,7 +169,6 @@ const getApplicationById = async (id) => {
       
       return {
         ...data,
-        selfAssessment: JSON.parse(data.self_assessment || '{}'),
         testResults: JSON.parse(data.test_results || '{}')
       };
     } else {
@@ -288,20 +191,14 @@ const rankCandidates = async (jobId, topN = 10) => {
 
     jobApplications.forEach(app => {
       let totalScore = 0;
-      let maxPossibleScore = 0;
+      let maxPossibleScore = 100; // Based on test percentage
 
-      job.skills.forEach(skill => {
-        const candidateScore = app.selfAssessment[skill.name] || 0;
-        totalScore += candidateScore * skill.weight;
-        maxPossibleScore += 10 * skill.weight;
-      });
-
-      if (app.testScore !== undefined) {
-        totalScore += app.testScore * 5;
-        maxPossibleScore += 100 * 5;
+      // Use test score as the primary ranking metric
+      if (app.testScore !== undefined && app.testScore !== null) {
+        totalScore = app.testScore;
       }
 
-      const percentage = (totalScore / maxPossibleScore) * 100;
+      const percentage = totalScore;
 
       heap.insert({
         ...app,
@@ -330,7 +227,6 @@ const rankCandidates = async (jobId, topN = 10) => {
 };
 
 module.exports = {
-  validateSkillDependencies,
   submitApplication,
   getAllApplications,
   getApplicationById,
