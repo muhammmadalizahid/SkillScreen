@@ -198,14 +198,24 @@ const generateMCQsForSkills = async (domain, skills, testSessionId = null, exper
     }
 
     // Get domain ID first
+    console.log(`🔍 Looking for domain: "${domain}"`);
+    
     const { data: domainData, error: domainError } = await supabase
       .from('domains')
-      .select('id')
+      .select('id, name')
       .eq('name', domain)
       .single();
 
     if (domainError || !domainData) {
-      console.error('Domain not found:', domain, domainError);
+      console.error('❌ Domain not found:', domain);
+      console.error('Error details:', domainError);
+      
+      // Try to fetch all domains to help debug
+      const { data: allDomains } = await supabase
+        .from('domains')
+        .select('id, name');
+      console.log('📋 Available domains in database:', allDomains?.map(d => d.name).join(', ') || 'None');
+      
       console.warn('⚠️  Falling back to sample questions');
       
       // Use fallback questions
@@ -258,6 +268,7 @@ const generateMCQsForSkills = async (domain, skills, testSessionId = null, exper
     }
 
     const domainId = domainData.id;
+    console.log(`✅ Found domain ID: ${domainId} for domain: ${domainData.name}`);
 
     // Fetch questions from question_bank table by domain only
     // The question_bank is organized by domain, not specific skills

@@ -93,6 +93,12 @@ export const getGraphStats = async () => {
   return response.data || null;
 };
 
+// Job Statistics API (views, applications, average score)
+export const getJobStatistics = async (jobId) => {
+  const response = await apiCall(`/jobs/${jobId}/statistics`);
+  return response.data || { views: 0, applicationsCount: 0, averageScore: 0 };
+};
+
 // Application APIs
 export const getApplications = async (jobId) => {
   const response = await apiCall(`/applications?jobId=${jobId}`);
@@ -147,12 +153,14 @@ export const generateFeedback = async (candidateData) => {
 
 export default {
   getJobs,
+  getUserJobs,
   getJobById,
   createJob,
   updateJob,
   deleteJob,
   getSimilarJobs,
   getGraphStats,
+  getJobStatistics,
   getDomains,
   getApplications,
   submitApplication,

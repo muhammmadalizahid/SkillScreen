@@ -72,11 +72,11 @@ class Graph {
     visited[startVertex] = true;
 
     while (queue.length > 0) {
-      const { vertex, depth } = queue.shift();
+      const { vertex, depth, weight } = queue.shift();
 
       // Don't include the starting vertex in results
       if (vertex !== startVertex) {
-        result.push({ vertex, depth });
+        result.push({ vertex, depth, weight: weight || 1 });
       }
 
       // Stop if we've reached max depth
@@ -88,13 +88,14 @@ class Graph {
       for (let i = 0; i < neighbors.length; i++) {
         const neighbor = neighbors[i];
         const neighborNode = typeof neighbor === 'object' ? neighbor.node : neighbor;
+        const edgeWeight = typeof neighbor === 'object' ? neighbor.weight : 1;
         
         if (!visited[neighborNode]) {
           visited[neighborNode] = true;
           queue.push({ 
             vertex: neighborNode, 
             depth: depth + 1,
-            weight: neighbor.weight || 1
+            weight: edgeWeight
           });
         }
       }

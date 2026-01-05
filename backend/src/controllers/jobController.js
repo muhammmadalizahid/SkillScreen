@@ -1,4 +1,4 @@
-const { createJob, getAllJobs, getJobsByUserId, getJobById, updateJob, deleteJob } = require('../services/databaseService');
+const { createJob, getAllJobs, getJobsByUserId, getJobById, updateJob, deleteJob, incrementJobViews, getJobStatistics } = require('../services/databaseService');
 const jobGraphService = require('../services/jobGraphService');
 
 // Create a new job
@@ -85,6 +85,9 @@ const getJobByIdController = async (req, res) => {
         message: 'Job not found'
       });
     }
+
+    // Increment view count (fire and forget - don't wait)
+    incrementJobViews(id).catch(err => console.error('Failed to increment views:', err));
 
     res.status(200).json({
       success: true,
@@ -225,6 +228,26 @@ const rebuildGraphController = async (req, res) => {
   }
 };
 
+// Get job statistics (views, applications, average score)
+const getJobStatisticsController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const statistics = await getJobStatistics(id);
+    
+    res.status(200).json({
+      success: true,
+      data: statistics
+    });
+  } catch (error) {
+    console.error('Error fetching job statistics:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch job statistics',
+      error: error.message
+    });
+  }
+};
+
 module.exports = {
   createJobController,
   getAllJobsController,
@@ -234,5 +257,6 @@ module.exports = {
   deleteJobController,
   getSimilarJobsController,
   getGraphStatsController,
-  rebuildGraphController
+  rebuildGraphController,
+  getJobStatisticsController
 };

@@ -210,6 +210,75 @@ const deleteJob = async (jobId) => {
   return true;
 };
 
+// Increment job view count
+const incrementJobViews = async (jobId) => {
+  if (!supabase) return;
+  
+  try {
+    // Get current views
+    const { data: job } = await supabase
+      .from('jobs')
+      .select('views')
+      .eq('id', jobId)
+      .single();
+    
+    if (job) {
+      const newViews = (job.views || 0) + 1;
+      await supabase
+        .from('jobs')
+        .update({ views: newViews })
+        .eq('id', jobId);
+    }
+  } catch (error) {
+    console.error('Error incrementing job views:', error);
+  }
+};
+
+// Get job statistics
+const getJobStatistics = async (jobId) => {
+  if (!supabase) {
+    return {
+      views: 0,
+      applicationsCount: 0,
+      averageScore: 0
+    };
+  }
+  
+  try {
+    // Get job views
+    const { data: job } = await supabase
+      .from('jobs')
+      .select('views')
+      .eq('id', jobId)
+      .single();
+    
+    // Get applications count and average score
+    const { data: applications } = await supabase
+      .from('applications')
+      .select('test_score')
+      .eq('job_id', jobId);
+    
+    const applicationsCount = applications?.length || 0;
+    const scores = applications?.filter(app => app.test_score !== null).map(app => app.test_score) || [];
+    const averageScore = scores.length > 0 
+      ? scores.reduce((sum, score) => sum + score, 0) / scores.length 
+      : 0;
+    
+    return {
+      views: job?.views || 0,
+      applicationsCount,
+      averageScore: Math.round(averageScore * 10) / 10 // Round to 1 decimal
+    };
+  } catch (error) {
+    console.error('Error getting job statistics:', error);
+    return {
+      views: 0,
+      applicationsCount: 0,
+      averageScore: 0
+    };
+  }
+};
+
 // ==================== JOB SKILLS ====================
 const addJobSkill = async (jobId, skillId, weight) => {
   if (!supabase) throw new Error('Database not configured');
@@ -468,6 +537,8 @@ module.exports = {
   getJobsByIds,
   updateJob,
   deleteJob,
+  incrementJobViews,
+  getJobStatistics,
   
   // Job Skills
   addJobSkill,

@@ -10,7 +10,8 @@ const {
   deleteJobController,
   getSimilarJobsController,
   getGraphStatsController,
-  rebuildGraphController
+  rebuildGraphController,
+  getJobStatisticsController
 } = require('../controllers/jobController');
 
 // Job routes
@@ -21,6 +22,7 @@ router.get('/graph/stats', getGraphStatsController); // Graph statistics
 router.post('/graph/rebuild', authenticateToken, rebuildGraphController); // Rebuild graph
 router.get('/:id', getJobByIdController);
 router.get('/:id/similar', getSimilarJobsController); // Similar jobs using BFS
+router.get('/:id/statistics', getJobStatisticsController); // Job statistics
 router.put('/:id', authenticateToken, updateJobController);
 router.delete('/:id', authenticateToken, deleteJobController);
 

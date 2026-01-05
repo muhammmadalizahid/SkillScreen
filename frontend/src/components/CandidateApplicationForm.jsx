@@ -47,7 +47,6 @@ const CandidateApplicationForm = ({ job, onSubmit }) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="John Doe"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#0a66c2] focus:ring-2 focus:ring-[#0a66c2] focus:ring-opacity-20 transition-all bg-white"
                 required
               />
@@ -61,7 +60,6 @@ const CandidateApplicationForm = ({ job, onSubmit }) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="john.doe@example.com"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#0a66c2] focus:ring-2 focus:ring-[#0a66c2] focus:ring-opacity-20 transition-all bg-white"
                 required
               />

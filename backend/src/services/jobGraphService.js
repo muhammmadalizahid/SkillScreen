@@ -132,8 +132,8 @@ class JobGraphService {
           if (a.depth !== b.depth) {
             return a.depth - b.depth;
           }
-          // If same depth, sort by weight (not available in current result, so random)
-          return 0;
+          // If same depth, prioritize higher weight (stronger connection)
+          return (b.weight || 1) - (a.weight || 1);
         })
         .slice(0, limit);
 
@@ -141,14 +141,35 @@ class JobGraphService {
       const jobIds = sortedJobs.map(node => node.vertex);
       const jobDetails = await databaseService.getJobsByIds(jobIds);
 
-      // Map jobs with their depth info
+      // Map jobs with their similarity scores
+      // Weight 3 = same domain = 100% match
+      // Weight 2 = related domain = 70% match
+      // Weight 1 = indirect = 40% match
       return jobDetails.map(job => {
         const node = sortedJobs.find(n => n.vertex === job.id);
+        const weight = node.weight || 1;
+        
+        // Calculate match percentage based on weight
+        let matchPercentage;
+        if (weight === 3) {
+          matchPercentage = 100; // Same domain
+        } else if (weight === 2) {
+          matchPercentage = 70;  // Related domain
+        } else {
+          matchPercentage = 40;  // Indirect connection
+        }
+        
+        // Reduce match percentage slightly for deeper connections
+        if (node.depth === 2) {
+          matchPercentage = Math.max(40, matchPercentage - 20);
+        }
+        
         return {
           ...job,
           similarity: {
             depth: node.depth,
-            relevance: maxDepth - node.depth + 1 // Higher is more relevant
+            weight: weight,
+            matchPercentage: matchPercentage
           }
         };
       });

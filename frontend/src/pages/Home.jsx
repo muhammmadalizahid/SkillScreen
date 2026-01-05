@@ -14,7 +14,7 @@ const Home = () => {
               Professional Candidate Screening Platform
             </p>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Streamline your hiring process with data structure-driven candidate evaluation and intelligent skill assessment tools powered by AI.
+              Streamline your hiring process with data structure-driven candidate evaluation and intelligent skill assessment tools.
             </p>
             
             <div className="flex gap-6 justify-center">
@@ -137,9 +137,9 @@ const Home = () => {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <p className="text-sm font-semibold text-gray-700 mb-3">Custom Data Structures</p>
+          <p className="text-sm font-semibold text-gray-700 mb-3">Custom Data Structures & Algorithms</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            {['LinkedList', 'Stack', 'Queue', 'MaxHeap'].map((ds) => (
+            {['LinkedList', 'Stack', 'Queue', 'MaxHeap', 'Graph', 'Binary Search', 'Heap Sort'].map((ds) => (
               <span
                 key={ds}
                 className="px-4 py-2 bg-[#0a66c2] text-white text-xs font-bold rounded-lg shadow-md"

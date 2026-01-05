@@ -1,204 +1,503 @@
-# SkillScreen - AI-Powered CS Job Screening Platform
+# SkillScreen - Professional Job Screening Platform
 
 [![React](https://img.shields.io/badge/React-18.2-blue.svg)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.18-lightgrey.svg)](https://expressjs.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-38B2AC.svg)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E.svg)](https://supabase.com/)
 
-A comprehensive job screening platform for Computer Science positions, featuring **manually implemented data structures** and **AI-powered assessment**.
+A full-stack job screening platform with **custom data structures & algorithms** for Computer Science recruitment. Features intelligent candidate ranking, domain-based job recommendations, and database-driven MCQ assessments.
 
 ## 🎯 Project Overview
 
-SkillScreen is a full-stack web application that demonstrates the practical application of data structures and algorithms in a real-world scenario. The platform covers the entire CS domain including Web Development, Software Engineering, AI/ML, Cybersecurity, DevOps, and Data Science.
+SkillScreen demonstrates the practical application of manually implemented data structures and algorithms in a production-ready web application. The platform handles job postings, candidate applications, MCQ testing, and automated ranking across six CS domains: **Web Development**, **Software Engineering**, **AI/ML**, **Cybersecurity**, **DevOps**, and **Data Science**.
 
-### Key Features
+---
 
-- **Manual Data Structures Implementation**: All core data structures coded from scratch
-  - 🔗 **LinkedList**: Job skills management
-  - 📚 **Stack**: MCQ undo functionality
-  - 🔄 **Queue**: Question delivery (FIFO)
-  - 📊 **MaxHeap**: Candidate ranking
-  - 🌐 **Graph**: Skill dependency validation (BFS/DFS)
-  - 🌲 **Tree**: Question bank hierarchy
+## ✨ Implemented Features
 
-- **AI Integration**
-  - 🤖 Gemini API for automated MCQ generation
-  - 💡 Personalized feedback based on performance
-  - 📈 Skill gap analysis
+#### **Core Data Structures** (Manual Implementation)
+- 🔗 **LinkedList** - Job skills storage and management
+- 📚 **Stack** - MCQ undo functionality and answer tracking
+- 🔄 **Queue** - FIFO question delivery system
+- 📊 **MaxHeap** - Efficient candidate ranking by score
+- 🌐 **Graph** - Job network with BFS for similar job recommendations
+- 🔍 **Binary Search** - Fast job filtering and search
+- 📈 **Heap Sort** - Multiple sorting criteria for jobs
 
-- **Complete Workflow**
-  - Job posting with weighted skill requirements
-  - Candidate self-assessment with validation
-  - AI-generated MCQs tailored to skill level
-  - Automated ranking using MaxHeap
-  - Comprehensive feedback with learning recommendations
+#### **Authentication & Authorization**
+- 🔐 **Google OAuth Integration** - Secure sign-in with Google accounts
+- 🔑 **JWT Token Management** - Stateless authentication
+- 👤 **Role-Based Access** - Recruiter and candidate permissions
+- 🛡️ **Protected Routes** - Middleware authentication
 
-## 🏗️ Tech Stack
+#### **Job Management System**
+- ➕ **Job Creation** - Recruiters post jobs with domain and skills
+- 📋 **Job Listing** - Browse all available positions
+- 🔎 **Job Search & Filter** - Binary search and heap sort for efficient filtering
+- 🌐 **Similar Jobs** - Graph BFS to find related positions by domain
+- 📊 **Job Analytics** - Graph statistics and network visualization
+- ✏️ **Job Updates** - Edit existing job postings
+- 🗑️ **Job Deletion** - Remove positions with cascade handling
 
-### Frontend
-- **React.js** - UI framework
-- **Vite** - Build tool
-- **React Router** - Navigation
-- **Tailwind CSS** - Styling
-- **Axios** - HTTP client
+#### **Candidate Application Flow**
+- 📝 **Application Submission** - Candidates apply with skill self-assessment
+- 📧 **Email Integration** - Application tracking by email
+- 👥 **Multiple Applications** - Candidates can apply to multiple jobs
+- 🔄 **Application Status** - Real-time tracking
 
-### Backend
-- **Node.js** - Runtime environment
-- **Express** - Web framework
-- **Supabase** - PostgreSQL database
-- **Gemini API** - AI integration
-- **bcrypt** - Password hashing
-- **dotenv** - Environment management
+#### **MCQ Testing System**
+- 📚 **Question Bank** - 30+ questions per domain stored in database
+- 🎯 **Adaptive Difficulty** - Questions match experience level
+- 🔄 **Queue-Based Delivery** - Questions served in FIFO order
+- ↩️ **Stack-Based Undo** - Review and change previous answers
+- ⏱️ **Auto-Grading** - Instant score calculation
+- 📊 **Performance Tracking** - Detailed test results
+
+#### **Candidate Ranking**
+- 🏆 **MaxHeap Ranking** - Efficient O(log n) insertion and extraction
+- 🎯 **Score-Based Sorting** - MCQ test performance ranking
+- 📉 **Top N Extraction** - View top candidates dynamically
+- 📊 **Visual Dashboard** - Recruiter interface with rankings
+
+#### **Job Network & Recommendations**
+- 🌐 **Domain-Based Graph** - Jobs connected by domain relationships
+- 🔄 **BFS Traversal** - Find similar jobs with depth limits
+- ⚖️ **Weighted Edges** - Same domain (weight: 3), Related (weight: 2)
+- 🔗 **Dynamic Relationships** - Predefined domain connections
+  - Web Dev ↔ Software Engineering
+  - Software Eng ↔ DevOps, Data Science
+  - AI/ML ↔ Data Science
+  - Cybersecurity ↔ DevOps
+
+#### **User Interface**
+- 🎨 **Modern Design** - LinkedIn-inspired professional interface
+- 📱 **Responsive Layout** - Mobile-first Tailwind CSS
+- 🔄 **Real-Time Updates** - React state management
+- 🎯 **Interactive Forms** - Validation and error handling
+- 📊 **Data Visualization** - Charts and metrics
+- 🔔 **User Feedback** - Toast notifications and confirmations
+
+#### **Backend Services**
+- 🗄️ **Database Service** - Supabase PostgreSQL operations
+- 🔐 **Auth Service** - Google OAuth and JWT management
+- 📝 **MCQ Service** - Question generation and grading
+- 🏢 **Job Service** - Job CRUD operations
+- 📊 **Graph Service** - Job network management
+- ✅ **Validation Service** - Input validation and sanitization
+
+#### **Database Schema**
+- 👥 **Users Table** - Google OAuth user profiles
+- 🏢 **Jobs Table** - Job postings with domain references
+- 📋 **Domains Table** - CS domain categories
+- 👤 **Candidates Table** - Candidate profiles
+- 📝 **Applications Table** - Job applications with test scores
+- ❓ **Question Bank** - MCQ questions by domain and difficulty
+
+## 🏗️ Technology Stack
+
+### Frontend Technologies
+- **React 18.2** - Modern UI framework with hooks
+- **Vite** - Lightning-fast build tool and dev server
+- **React Router 6** - Client-side routing and navigation
+- **Tailwind CSS 3.3** - Utility-first styling framework
+- **Axios** - HTTP client for API communication
+- **Context API** - Global state management for authentication
+
+### Backend Technologies
+- **Node.js 18+** - JavaScript runtime environment
+- **Express 4.18** - Minimal web application framework
+- **Supabase** - PostgreSQL database with real-time capabilities
+- **Google OAuth 2.0** - Authentication service
+- **JWT (jsonwebtoken)** - Secure token-based authentication
+- **bcrypt** - Password hashing (for future features)
+- **CORS** - Cross-origin resource sharing middleware
+- **dotenv** - Environment variable management
+
+### Development Tools
+- **nodemon** - Auto-restart development server
+- **PostCSS** - CSS processing for Tailwind
+- **ESLint** - Code quality and consistency
 
 ## 📁 Project Structure
 
 ```
 SkillScreen/
-├── frontend/
+├── frontend/                      # React frontend application
 │   ├── src/
-│   │   ├── components/          # React components
-│   │   │   ├── JobPostingForm.jsx
-│   │   │   ├── CandidateApplicationForm.jsx
-│   │   │   ├── MCQTestView.jsx
-│   │   │   ├── RecruiterDashboard.jsx
-│   │   │   └── AIFeedbackPanel.jsx
-│   │   ├── pages/              # Page components
-│   │   │   ├── Home.jsx
-│   │   │   ├── Jobs.jsx
-│   │   │   ├── Apply.jsx
-│   │   │   └── Dashboard.jsx
-│   │   ├── dsa/                # Manual data structures
-│   │   │   ├── LinkedList.js
-│   │   │   ├── Stack.js
-│   │   │   ├── Queue.js
-│   │   │   ├── MaxHeap.js
-│   │   │   ├── Graph.js
-│   │   │   └── Tree.js
-│   │   ├── services/           # API services
-│   │   ├── context/            # React context
-│   │   └── utils/              # Utility functions
-│   └── package.json
-├── backend/
+│   │   ├── components/           # Reusable UI components
+│   │   │   ├── JobPostingForm.jsx           # Create new job postings
+│   │   │   ├── CandidateApplicationForm.jsx # Apply to jobs
+│   │   │   ├── MCQTestView.jsx              # Take MCQ tests
+│   │   │   ├── RecruiterDashboard.jsx       # View ranked candidates
+│   │   │   ├── SimilarJobs.jsx              # Graph-based recommendations
+│   │   │   ├── ConfirmDialog.jsx            # Confirmation modals
+│   │   │   └── PrivateRoute.jsx             # Protected route wrapper
+│   │   │
+│   │   ├── pages/                # Main application pages
+│   │   │   ├── Home.jsx          # Landing page with features
+│   │   │   ├── Jobs.jsx          # Browse and search jobs
+│   │   │   ├── Apply.jsx         # Job application page
+│   │   │   ├── Dashboard.jsx     # Recruiter dashboard
+│   │   │   └── Login.jsx         # Google OAuth login
+│   │   │
+│   │   ├── dsa/                  # Manual data structure implementations
+│   │   │   ├── LinkedList.js     # Node-based linked list
+│   │   │   ├── Stack.js          # LIFO stack with nodes
+│   │   │   ├── Queue.js          # FIFO queue with nodes
+│   │   │   ├── MaxHeap.js        # Array-based max heap
+│   │   │   ├── Graph.js          # Adjacency list graph with BFS/DFS
+│   │   │   ├── BinarySearch.js   # Binary search algorithm
+│   │   │   └── HeapSort.js       # Heap sort algorithm
+│   │   │
+│   │   ├── services/             # API communication layer
+│   │   │   └── api.js            # Axios instance and API calls
+│   │   │
+│   │   ├── context/              # React Context providers
+│   │   │   └── AuthContext.jsx   # Authentication state management
+│   │   │
+│   │   ├── utils/                # Helper functions
+│   │   │   ├── dataTransformers.js  # Data formatting utilities
+│   │   │   └── helpers.js           # General helper functions
+│   │   │
+│   │   ├── App.jsx               # Main app component with routing
+│   │   ├── main.jsx              # React DOM entry point
+│   │   └── index.css             # Global styles and Tailwind imports
+│   │
+│   ├── public/                   # Static assets
+│   ├── index.html                # HTML template
+│   ├── package.json              # Dependencies and scripts
+│   ├── vite.config.js            # Vite configuration
+│   ├── tailwind.config.js        # Tailwind CSS configuration
+│   └── postcss.config.cjs        # PostCSS configuration
+│
+├── backend/                       # Node.js/Express backend
 │   ├── src/
-│   │   ├── controllers/        # Route controllers
-│   │   ├── routes/             # API routes
-│   │   ├── services/           # Business logic with DS
-│   │   ├── middlewares/        # Express middlewares
-│   │   └── config/             # Configuration files
-│   └── package.json
-└── README.md
+│   │   ├── controllers/          # Route handlers
+│   │   │   ├── jobController.js          # Job CRUD operations
+│   │   │   ├── candidateController.js    # Application handling
+│   │   │   └── mcqController.js          # MCQ generation & grading
+│   │   │
+│   │   ├── routes/               # API route definitions
+│   │   │   ├── authRoutes.js     # Google OAuth endpoints
+│   │   │   ├── jobRoutes.js      # Job management endpoints
+│   │   │   ├── candidateRoutes.js # Application endpoints
+│   │   │   ├── mcqRoutes.js      # MCQ test endpoints
+│   │   │   └── domainRoutes.js   # Domain data endpoints
+│   │   │
+│   │   ├── services/             # Business logic layer
+│   │   │   ├── authService.js         # Google OAuth verification
+│   │   │   ├── databaseService.js     # Supabase operations
+│   │   │   ├── jobGraphService.js     # Graph building & BFS
+│   │   │   ├── mcqService.js          # Question management
+│   │   │   ├── skillService.js        # Skill operations
+│   │   │   └── validationService.js   # Input validation
+│   │   │
+│   │   ├── middleware/           # Express middleware
+│   │   │   └── authMiddleware.js # JWT verification
+│   │   │
+│   │   ├── utils/                # Utility classes
+│   │   │   └── Graph.js          # Backend graph implementation
+│   │   │
+│   │   ├── config/               # Configuration files
+│   │   │   └── db.js             # Supabase client setup
+│   │   │
+│   │   ├── app.js                # Express app setup and routes
+│   │   └── seedJobs.js           # Database seeding script
+│   │
+│   └── package.json              # Backend dependencies and scripts
+│
+├── README.md                      # Project documentation
+├── PROJECT_DOCUMENTATION.md       # Technical documentation
+├── QuestionBankImport.sql         # MCQ question data
+├── JSONStructure.txt              # API response formats
+└── parse_questions.js             # Question import utility
 ```
+
+### Key Directory Descriptions
+
+- **frontend/src/dsa/** - All data structures implemented from scratch without libraries
+- **frontend/src/components/** - Reusable React components with complex state management
+- **frontend/src/pages/** - Full-page route components
+- **backend/src/services/** - Core business logic separated from route handlers
+- **backend/src/utils/** - Shared utility classes used across services
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-- Supabase account (optional, works with mock data)
-- Gemini API key (optional, uses fallback)
+- **Node.js** v18 or higher ([Download](https://nodejs.org/))
+- **npm** or **yarn** package manager
+- **Supabase Account** ([Sign up free](https://supabase.com/))
+- **Google Cloud Console** project for OAuth ([Console](https://console.cloud.google.com/))
 
-### Installation
+### Installation Steps
 
-1. **Clone the repository**
+#### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/SkillScreen.git
 cd SkillScreen
 ```
 
-2. **Setup Backend**
+#### 2. Backend Setup
+
 ```bash
+# Navigate to backend directory
 cd backend
+
+# Install dependencies
 npm install
 
-# Copy environment variables
+# Create environment file
 copy .env.example .env
-
-# Edit .env and add your credentials:
-# - SUPABASE_URL
-# - SUPABASE_KEY
-# - GEMINI_API_KEY
 ```
 
-3. **Setup Frontend**
+**Configure `.env` file:**
+```env
+PORT=3000
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_KEY=your_supabase_anon_key
+JWT_SECRET=your_secure_jwt_secret_key
+GOOGLE_CLIENT_ID=your_google_oauth_client_id
+```
+
+**Get Supabase credentials:**
+1. Create project at [supabase.com](https://supabase.com)
+2. Go to Project Settings → API
+3. Copy Project URL and anon/public key
+
+**Get Google OAuth credentials:**
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create new project or select existing
+3. Enable Google+ API
+4. Create OAuth 2.0 Client ID credentials
+5. Add authorized origins: `http://localhost:5173`
+6. Copy Client ID
+
+#### 3. Database Setup
+
+**Option A: Using Supabase Dashboard**
+1. Open your Supabase project dashboard
+2. Go to SQL Editor
+3. Run the schema creation queries (contact repo owner for schema)
+4. Import question bank data using `QuestionBankImport.sql`
+
+**Option B: Seed Sample Data**
 ```bash
-cd ../frontend
+# Run the seed script
+npm run seed
+```
+
+#### 4. Frontend Setup
+
+```bash
+# Navigate to frontend directory (from project root)
+cd frontend
+
+# Install dependencies
 npm install
 
-# Copy environment variables
+# Create environment file
 copy .env.example .env
-
-# Edit .env and add:
-# - VITE_API_BASE_URL=http://localhost:3000/api
-# - VITE_GEMINI_API_KEY
 ```
 
-4. **Initialize Tailwind CSS**
-```bash
-npx tailwindcss init -p
+**Configure frontend `.env`:**
+```env
+VITE_API_BASE_URL=http://localhost:3000/api
+VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
 ```
 
 ### Running the Application
 
-1. **Start Backend Server**
+#### Start Backend Server
 ```bash
 cd backend
 npm run dev
-# Server runs on http://localhost:3000
 ```
+Server runs at: `http://localhost:3000`
 
-2. **Start Frontend Development Server**
+#### Start Frontend Development Server
 ```bash
 cd frontend
 npm run dev
-# Application runs on http://localhost:5173
+```
+Application runs at: `http://localhost:5173`
+
+#### Access the Platform
+1. Open browser to `http://localhost:5173`
+2. Click "Sign In" and authenticate with Google
+3. Start exploring jobs or post new positions!
+
+## 📊 Data Structures Implementation & Usage
+
+### 1. **LinkedList** - Job Skills Management
+**File:** [frontend/src/dsa/LinkedList.js](frontend/src/dsa/LinkedList.js)
+
+**Implementation:** Node-based singly linked list with head pointer
+
+**Operations:**
+- `insert(data)` - Add skill to end - O(n)
+- `delete(data)` - Remove skill by value - O(n)
+- `search(data)` - Find skill - O(n)
+- `toArray()` - Convert to array for display - O(n)
+
+**Usage in Application:**
+- Storing job required skills dynamically
+- Sequential skill iteration
+- Dynamic skill list modifications
+
+---
+
+### 2. **Stack** - MCQ Undo Functionality
+**File:** [frontend/src/dsa/Stack.js](frontend/src/dsa/Stack.js)
+
+**Implementation:** Node-based LIFO structure with top pointer
+
+**Operations:**
+- `push(data)` - Add answer - O(1)
+- `pop()` - Remove last answer - O(1)
+- `peek()` - View top answer - O(1)
+- `isEmpty()` - Check if empty - O(1)
+
+**Usage in Application:**
+- Store answered MCQ questions
+- Undo functionality in tests
+- Answer history tracking
+- Last-in-first-out answer retrieval
+
+---
+
+### 3. **Queue** - Question Delivery System
+**File:** [frontend/src/dsa/Queue.js](frontend/src/dsa/Queue.js)
+
+**Implementation:** Node-based FIFO structure with front and rear pointers
+
+**Operations:**
+- `enqueue(data)` - Add question to rear - O(1)
+- `dequeue()` - Remove from front - O(1)
+- `peek()` - View next question - O(1)
+- `toArray()` - Get all questions - O(n)
+
+**Usage in Application:**
+- MCQ question delivery in order
+- Fair question distribution (FIFO)
+- Question prefetching
+- Test session management
+
+---
+
+### 4. **MaxHeap** - Candidate Ranking
+**Files:** [frontend/src/dsa/MaxHeap.js](frontend/src/dsa/MaxHeap.js)
+
+**Implementation:** Array-based binary max heap with custom comparator
+
+**Operations:**
+- `insert(data)` - Add candidate - O(log n)
+- `extractMax()` - Get top candidate - O(log n)
+- `heapifyUp()` - Maintain heap property - O(log n)
+- `heapifyDown()` - Rebalance after extraction - O(log n)
+
+**Usage in Application:**
+- Rank candidates by test score
+- Efficient top-N candidate extraction
+- Dynamic ranking updates
+- O(log n) insertion for real-time rankings
+
+**Ranking Formula:**
+```javascript
+totalScore = testPercentage // MCQ test score (0-100)
 ```
 
-3. **Access the Application**
-Open your browser and navigate to `http://localhost:5173`
+---
 
-## 📊 Data Structures Usage
+### 5. **Graph** - Job Network & Recommendations
+**Files:** 
+- [frontend/src/dsa/Graph.js](frontend/src/dsa/Graph.js)
+- [backend/src/utils/Graph.js](backend/src/utils/Graph.js)
 
-### LinkedList
-**Purpose**: Store and manage job skills dynamically
+**Implementation:** Adjacency list with weighted edges
 
-**Implementation**: Manual node-based linked list with insert, delete, search operations
+**Operations:**
+- `addVertex(vertex)` - Add job node - O(1)
+- `addEdge(u, v, weight)` - Connect jobs - O(1)
+- `bfs(start, depth)` - Find similar jobs - O(V + E)
+- `getNeighbors(vertex)` - Get connected jobs - O(1)
 
-**Usage**: Job posting form adds skills to a linked list, ensuring efficient sequential access
+**Graph Structure:**
+```
+Jobs connected by domain:
+- Same domain: weight = 3 (strong)
+- Related domains: weight = 2 (moderate)
+- Unrelated: no edge
+```
 
-### Stack
-**Purpose**: Implement undo functionality in MCQ tests
+**Domain Relationships:**
+```
+Web Dev ↔ Software Engineering
+Software Eng ↔ DevOps, Data Science
+AI/ML ↔ Data Science
+Cybersecurity ↔ DevOps
+```
 
-**Implementation**: LIFO structure using nodes
+**Usage in Application:**
+- Build job network on server startup
+- BFS traversal for "Similar Jobs" feature
+- Weighted graph for relevance scoring
+- Domain-based job clustering
 
-**Usage**: Each answer is pushed to stack; undo pops the last answer and re-queues the question
+---
 
-### Queue
-**Purpose**: Deliver MCQ questions in order
+### 6. **Binary Search** - Job Search & Filter
+**File:** [frontend/src/dsa/BinarySearch.js](frontend/src/dsa/BinarySearch.js)
 
-**Implementation**: FIFO structure with front and rear pointers
+**Implementation:** Classic binary search with field-based comparison
 
-**Usage**: Questions are enqueued after generation; dequeued one by one during test
+**Operations:**
+- `search(array, query, fields)` - Filtered search - O(n) [linear scan with matching]
+- `exactSearch(array, target, field)` - Exact match - O(log n)
 
-### MaxHeap
-**Purpose**: Rank candidates efficiently
+**Usage in Application:**
+- Fast job title/description search
+- Efficient filtering in sorted lists
+- Quick exact match lookups
 
-**Implementation**: Array-based binary heap with heapify operations
+---
 
-**Usage**: Insert all candidates with scores; extract top N for recruiter dashboard
+### 7. **Heap Sort** - Multiple Sorting Criteria
+**File:** [frontend/src/dsa/HeapSort.js](frontend/src/dsa/HeapSort.js)
 
-### Graph
-**Purpose**: Validate skill dependencies
+**Implementation:** In-place sorting using heap data structure
 
-**Implementation**: Adjacency list with BFS/DFS traversal
+**Operations:**
+- `sort(array, field, order)` - Sort by field - O(n log n)
+- `heapify(array, size, root)` - Build heap - O(log n)
 
-**Usage**: Check if candidate's high-scored skills have prerequisite skills at reasonable levels
+**Usage in Application:**
+- Sort jobs by posted date
+- Sort by title alphabetically
+- Sort candidates by score
+- Multi-criteria sorting options
 
-### Tree
-**Purpose**: Organize question bank hierarchically
+---
 
-**Implementation**: Binary tree with level-order insertion
+### Data Structure Interaction Flow
 
-**Usage**: Structure questions by difficulty and topic for efficient retrieval
+```
+Job Posting Flow:
+JobPostingForm → LinkedList (skills) → Database
+
+Application Flow:
+CandidateForm → Application → MCQ Generation → Queue (questions)
+
+MCQ Test Flow:
+Queue.dequeue() → Display Question → Stack.push(answer) → Next Question
+Stack.pop() → Undo Last → Queue (re-enqueue)
+
+Ranking Flow:
+Applications → Calculate Scores → MaxHeap.insert() → MaxHeap.extractMax() → Top N Candidates
+
+Similar Jobs Flow:
+Current Job → Graph.bfs(jobId, depth=2) → Related Jobs by Domain
+```
 
 ## 🤖 AI Integration
 
@@ -219,130 +518,446 @@ Analyzes candidate performance and provides:
 
 ## 🔧 API Endpoints
 
-### Jobs
-- `POST /api/jobs` - Create job
-- `GET /api/jobs` - Get all jobs
-- `GET /api/jobs/:id` - Get job by ID
-- `PUT /api/jobs/:id` - Update job
-- `DELETE /api/jobs/:id` - Delete job
+### Authentication Routes (`/api/auth`)
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/google` | Google OAuth login | No |
+| GET | `/verify` | Verify JWT token | Yes |
+| POST | `/refresh` | Refresh access token | Yes |
 
-### Applications
-- `POST /api/applications` - Submit application
-- `GET /api/applications` - Get applications
-- `GET /api/applications/:id` - Get application by ID
-- `GET /api/applications/ranked/:jobId` - Get ranked candidates
+### Job Routes (`/api/jobs`)
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/` | Create new job | Yes |
+| GET | `/` | Get all jobs | No |
+| GET | `/user/my-jobs` | Get user's jobs | Yes |
+| GET | `/graph/stats` | Get graph statistics | No |
+| POST | `/graph/rebuild` | Rebuild job graph | Yes |
+| GET | `/:id` | Get job by ID | No |
+| GET | `/:id/similar` | Get similar jobs (BFS) | No |
+| PUT | `/:id` | Update job | Yes |
+| DELETE | `/:id` | Delete job | Yes |
 
-### MCQs
-- `POST /api/mcqs/generate` - Generate MCQs
-- `POST /api/mcqs/submit` - Submit answers
+### Application Routes (`/api/applications`)
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/` | Submit application | Yes |
+| GET | `/` | Get all applications | No |
+| GET | `/:id` | Get application by ID | No |
+| GET | `/ranked/:jobId` | Get ranked candidates | No |
 
-### Feedback
-- `POST /api/feedback/generate` - Generate feedback
-- `GET /api/feedback/:applicationId` - Get feedback
+### MCQ Routes (`/api/mcqs`)
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/generate` | Generate MCQ test | No |
+| POST | `/submit` | Submit MCQ answers | No |
 
-## 🎨 Features Walkthrough
+### Domain Routes (`/api/domains`)
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/` | Get all domains | No |
+| GET | `/:id` | Get domain by ID | No |
 
-### 1. Job Posting
-- Recruiter creates job with title, domain, description
-- Adds skills with weights (1-10) using LinkedList
-- Defines skill dependencies using Graph
-- System validates no circular dependencies
+### Request/Response Examples
 
-### 2. Candidate Application
-- Candidate views job details
-- Self-assesses skills (1-10 rating)
-- Graph-based validation checks skill consistency
-- Application stored with timestamp
+**Create Job:**
+```json
+POST /api/jobs
+Headers: { "Authorization": "Bearer <jwt_token>" }
+Body: {
+  "title": "Senior Backend Developer",
+  "description": "Looking for experienced Node.js developer",
+  "domain": "Software Engineering",
+  "skills": ["Node.js", "Express", "PostgreSQL"],
+  "experienceLevel": "Senior"
+}
+```
 
-### 3. MCQ Test
-- AI generates questions via Gemini API
+**Generate MCQs:**
+```json
+POST /api/mcqs/generate
+Body: {
+  "domain": "Software Engineering",
+  "skills": ["Node.js", "Express"],
+  "experienceLevel": "Mid Level"
+}
+Response: {
+  "success": true,
+  "data": {
+    "questions": [...], // Queue of questions
+    "testSessionId": "uuid"
+  }
+}
+```
+
+**Submit Application:**
+```json
+POST /api/applications
+Headers: { "Authorization": "Bearer <jwt_token>" }
+Body: {
+  "candidateName": "John Doe",
+  "candidateEmail": "john@example.com",
+  "jobId": "123"
+}
+```
+
+## 🎨 User Workflow & Features
+
+### For Job Seekers (Candidates)
+
+#### 1. **Sign In**
+- Click "Sign In" on homepage
+- Authenticate with Google OAuth
+- Automatic profile creation in database
+
+#### 2. **Browse Jobs**
+- Navigate to "Browse Jobs" page
+- View all available positions
+- Search by title, domain, or skills
+- Sort by date or relevance
+- View similar jobs (Graph BFS recommendations)
+
+#### 3. **Apply for Position**
+- Click "Apply" on job listing
+- Fill out application form
+- Automatic user info population
+- Submit application
+
+#### 4. **Take MCQ Test**
+- System generates questions from database
 - Questions delivered via Queue (FIFO)
-- Answers stored in Stack for undo
-- Auto-grading on submission
+- Answer questions one by one
+- Use undo feature (Stack) to review previous answers
+- Auto-grading upon completion
 
-### 4. Ranking
-- All candidates inserted into MaxHeap
-- Scores calculated with weighted skills + test score
-- Top N candidates extracted using heap operations
-- Displayed on recruiter dashboard
-
-### 5. AI Feedback
-- Candidate profile sent to Gemini API
-- Receives personalized feedback JSON
-- Displays strengths, weaknesses, recommendations
-- Learning path suggestions
-
-## 🛠️ Development
-
-### Building for Production
-
-**Frontend**
-```bash
-cd frontend
-npm run build
-```
-
-**Backend**
-```bash
-cd backend
-npm start
-```
-
-### Environment Variables
-
-**Backend (.env)**
-```env
-PORT=3000
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-GEMINI_API_KEY=your_gemini_api_key
-JWT_SECRET=your_jwt_secret
-```
-
-**Frontend (.env)**
-```env
-VITE_API_BASE_URL=http://localhost:3000/api
-VITE_GEMINI_API_KEY=your_gemini_api_key
-```
-
-## 📚 Learning Objectives
-
-This project demonstrates:
-1. **Manual implementation** of fundamental data structures
-2. **Practical application** of DS&A in real-world scenarios
-3. **Full-stack development** with modern technologies
-4. **AI integration** for intelligent features
-5. **RESTful API design** and implementation
-6. **State management** in React applications
-7. **Database operations** with Supabase
-8. **Responsive UI design** with Tailwind CSS
-
-## 🔮 Future Enhancements
-
-- [ ] Add short-answer micro-tasks
-- [ ] Implement adaptive question difficulty
-- [ ] Expand to more CS domains
-- [ ] Add recruiter analytics dashboard
-- [ ] Implement real-time notifications
-- [ ] Add video interview scheduling
-- [ ] Create mobile applications
-- [ ] Implement comprehensive test coverage
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👥 Contributors
-
-Built as a DSA Final Project demonstrating practical applications of data structures and algorithms.
-
-## 🙏 Acknowledgments
-
-- React team for the amazing framework
-- Gemini API for AI capabilities
-- Supabase for database hosting
-- Tailwind CSS for styling utilities
+#### 5. **View Results**
+- See test score immediately
+- View correct/incorrect answers
+- Application automatically linked to job
 
 ---
 
-**Note**: This project is designed for educational purposes to demonstrate the implementation and usage of manual data structures in a real-world application.
+### For Recruiters
+
+#### 1. **Sign In & Access Dashboard**
+- Google OAuth authentication
+- Navigate to "Recruiter Dashboard"
+- View all posted jobs
+
+#### 2. **Post New Job**
+- Fill job posting form
+- Select domain from dropdown
+- Add multiple skills dynamically (LinkedList)
+- Choose experience level
+- Submit to database
+
+#### 3. **View Applications**
+- Select job from dashboard
+- View all candidates who applied
+- See ranked candidates (MaxHeap)
+- Adjust Top N filter dynamically
+- View individual candidate details
+
+#### 4. **Analyze Candidates**
+- Candidates automatically ranked by score
+- View test performance breakdown
+- See percentage scores
+- Export rankings
+
+#### 5. **Manage Jobs**
+- Edit existing job postings
+- Update requirements
+- Delete obsolete positions
+- View graph statistics
+
+---
+
+### Key User Interactions
+
+**Search & Filter:**
+- Type in search bar → Binary search filters results
+- Click domain filter → Shows domain-specific jobs
+- Sort dropdown → Heap sort applies ordering
+
+**Similar Jobs:**
+- Click "Similar Jobs" → Graph BFS traversal (depth 2)
+- Shows jobs in same domain (weight 3)
+- Shows jobs in related domains (weight 2)
+
+**Dynamic Ranking:**
+- Change "Top N" input → MaxHeap extracts N candidates
+- Real-time re-ranking as input changes
+- Efficient O(log n) operations
+
+**Test Experience:**
+- Questions appear one at a time (Queue dequeue)
+- "Undo" button → Stack pop previous answer
+- Question re-added to Queue for retry
+- Progress bar shows completion status
+
+## 🛠️ Development & Deployment
+
+### Development Scripts
+
+**Backend:**
+```bash
+npm start       # Start production server
+npm run dev     # Start with nodemon (auto-reload)
+npm run seed    # Seed sample jobs
+```
+
+**Frontend:**
+```bash
+npm run dev     # Start Vite dev server
+npm run build   # Build for production
+npm run preview # Preview production build
+```
+
+### Building for Production
+
+**Frontend Build:**
+```bash
+cd frontend
+npm run build
+# Outputs to frontend/dist/
+```
+
+**Backend Production:**
+```bash
+cd backend
+npm start
+# Or use PM2 for process management:
+pm2 start src/app.js --name skillscreen-api
+```
+
+### Environment Configuration
+
+**Backend Environment Variables:**
+```env
+# Server
+PORT=3000
+NODE_ENV=production
+
+# Database
+SUPABASE_URL=your_production_supabase_url
+SUPABASE_KEY=your_production_supabase_key
+
+# Authentication
+JWT_SECRET=your_secure_production_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+
+# Optional
+LOG_LEVEL=info
+```
+
+**Frontend Environment Variables:**
+```env
+# API Configuration
+VITE_API_BASE_URL=https://your-api-domain.com/api
+
+# Authentication
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+
+# Optional
+VITE_APP_NAME=SkillScreen
+VITE_ENV=production
+```
+
+### Deployment Options
+
+**Backend Deployment:**
+- **Vercel**: Deploy with `vercel` CLI
+- **Railway**: Connect GitHub repo
+- **Heroku**: Use `Procfile`
+- **AWS/DigitalOcean**: PM2 + Nginx
+
+**Frontend Deployment:**
+- **Vercel**: `vercel --prod`
+- **Netlify**: Connect GitHub repo
+- **GitHub Pages**: Build and deploy `dist/`
+
+### Database Migrations
+
+When updating schema:
+1. Run SQL migrations in Supabase dashboard
+2. Update seed scripts if needed
+3. Test with `npm run seed`
+
+### Code Quality
+
+**Linting:**
+```bash
+npm run lint        # Check for issues
+npm run lint:fix    # Auto-fix issues
+```
+
+**Testing:**
+```bash
+npm test            # Run test suite
+npm run test:watch  # Watch mode
+```
+
+## 📚 Key Learning Outcomes
+
+This project demonstrates mastery of:
+
+### Data Structures & Algorithms
+✅ **Manual implementation** of 7 core data structures without libraries  
+✅ **Practical application** in real-world scenarios (not just theoretical)  
+✅ **Time complexity analysis** - O(1), O(log n), O(n) operations  
+✅ **Space complexity optimization** - efficient memory usage  
+✅ **Algorithm selection** - choosing right DS for specific problems
+
+### Software Engineering
+✅ **Full-stack development** - React frontend + Node.js backend  
+✅ **RESTful API design** - proper HTTP methods and status codes  
+✅ **Authentication & Authorization** - OAuth 2.0 and JWT  
+✅ **Database modeling** - relational schema design with Supabase  
+✅ **State management** - React Context API and hooks  
+✅ **Component architecture** - reusable, maintainable components
+
+### Professional Development
+✅ **Git version control** - branching and collaboration  
+✅ **Environment configuration** - production vs development  
+✅ **API documentation** - clear endpoint specifications  
+✅ **Code organization** - separation of concerns, MVC pattern  
+✅ **Error handling** - try-catch, validation, user feedback  
+✅ **Security best practices** - JWT tokens, OAuth, CORS
+
+### Problem Solving
+✅ **Graph algorithms** - BFS for job recommendations  
+✅ **Priority queue** - efficient candidate ranking  
+✅ **FIFO/LIFO** - question delivery and undo functionality  
+✅ **Binary search** - fast filtering and lookup  
+✅ **Heap operations** - sorting and top-N extraction
+
+---
+
+## 🔮 Future Enhancements
+
+### Planned Features
+- [ ] **Real-time notifications** - WebSocket for instant updates
+- [ ] **Advanced analytics** - Recruiter dashboard with charts
+- [ ] **Resume parser** - Extract skills automatically from PDF/DOCX
+- [ ] **Video interviews** - Integrated video call scheduling
+- [ ] **AI feedback** - Gemini API for personalized recommendations
+- [ ] **Code challenges** - Live coding environment for technical roles
+- [ ] **Mobile app** - React Native iOS/Android applications
+- [ ] **Email notifications** - Application status updates
+- [ ] **Batch operations** - Bulk job posting and candidate management
+- [ ] **Advanced filtering** - Multi-criteria job search
+- [ ] **Saved searches** - Store and reuse search queries
+- [ ] **Application tracking** - Status workflow (applied → screening → interview → offer)
+
+### Technical Improvements
+- [ ] **Redis caching** - Improve API response times
+- [ ] **Rate limiting** - API request throttling
+- [ ] **Comprehensive testing** - Unit, integration, E2E tests
+- [ ] **CI/CD pipeline** - Automated testing and deployment
+- [ ] **Docker containers** - Consistent development environments
+- [ ] **Load balancing** - Handle high traffic
+- [ ] **Database optimization** - Indexing and query performance
+- [ ] **Monitoring** - Error tracking with Sentry
+- [ ] **TypeScript migration** - Type safety across codebase
+
+### Data Structure Additions
+- [ ] **Trie** - Autocomplete for skill search
+- [ ] **B-Tree** - Efficient database-like indexing
+- [ ] **Red-Black Tree** - Self-balancing for sorted data
+- [ ] **Hash Table** - Fast key-value lookups
+- [ ] **Bloom Filter** - Probabilistic duplicate detection
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2026 SkillScreen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 👥 Project Team & Contributors
+
+**Developers:**
+- DSA Final Project Team
+
+**Project Type:**
+Educational demonstration of data structures and algorithms in production web applications
+
+**Academic Context:**
+3rd Semester DSA Final Project - University Course
+
+---
+
+## 🙏 Acknowledgments
+
+### Technologies & Services
+- **React Team** - Outstanding JavaScript framework
+- **Supabase** - Excellent PostgreSQL hosting and real-time features
+- **Google Cloud** - OAuth 2.0 authentication services
+- **Tailwind Labs** - Beautiful utility-first CSS framework
+- **Vercel** - Lightning-fast build tools with Vite
+
+### Educational Resources
+- **GeeksforGeeks** - Data structure implementations and algorithms
+- **LeetCode** - Problem-solving practice
+- **MDN Web Docs** - JavaScript and web API references
+- **React Documentation** - Best practices and patterns
+
+### Inspiration
+- **LinkedIn** - UI/UX design inspiration
+- **Indeed/Glassdoor** - Job platform workflow patterns
+- **HackerRank** - MCQ and coding assessment ideas
+
+---
+
+## 📞 Support & Contact
+
+**Issues & Bug Reports:**  
+Open an issue on GitHub with detailed description and reproduction steps
+
+**Feature Requests:**  
+Submit via GitHub Issues with `[Feature Request]` tag
+
+**Questions:**  
+Check existing issues or create new discussion
+
+---
+
+## 🌟 Project Highlights
+
+> **"Built from scratch"** - Every data structure manually coded, no external DS libraries  
+> **"Production-ready"** - Full authentication, database, and deployment configuration  
+> **"Real-world application"** - Solves actual HR screening problems  
+> **"Educational excellence"** - Demonstrates DSA concepts in practical scenarios  
+
+**⭐ Star this repository if you found it helpful for learning DSA implementation!**
+
+---
+
+**Last Updated:** January 5, 2026  
+**Version:** 1.0.0  
+**Status:** Active Development
